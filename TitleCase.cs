@@ -1,6 +1,4 @@
-﻿// Given a list of cities "new york, detroit, miami", capitalize the first letter of each word: New York, Detroit, Miami
-
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace Questions
 {
