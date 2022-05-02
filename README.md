@@ -13,8 +13,8 @@ Rule 1 : BaseClass should be generic<br/>
 Rule 2: Should avoid creating new instance of the base class<br/>
 Derived Class - NumberType<br/>
 Derived Class - StringType<br/>
+<br/>
 
-=========================================================================================================================<br/>
 Sample input:<br/>
 <br/>
 NumberType(1);<br/>
