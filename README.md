@@ -6,7 +6,7 @@ Visual Studio 2022<br/>
 <h1>Display data using the Breadth First search.</h1>
 Numbers represent levels.<br/>
 
-<h1>Take a input of any generic type and return the output using C# generics and with the help of object oriented programming</h1>
+<h1>Take an input of any generic type and return the output using C# generics and with the help of object oriented programming</h1>
 
 Base Class - BaseClass<br/>
 Rule 1 : BaseClass should be generic<br/>
@@ -19,3 +19,8 @@ Sample input:<br/>
 <br/>
 NumberType(1);<br/>
 StringType("hello world")<br/>
+<br/>
+
+<h1>Given a list of cities "new york, detroit, miami", capitalize the first letter of each word: New York, Detroit, Miami</h1>
+
+
