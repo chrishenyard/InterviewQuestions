@@ -7,7 +7,7 @@ Visual Studio 2022<br/>
 Numbers represent levels.<br/>
 <br/>
 O performance notation:<br/>
-![image](https://user-images.githubusercontent.com/10076659/166330702-ab827572-6190-4290-a1b2-6a366d10b88a.png)
+![image](https://user-images.githubusercontent.com/10076659/166330983-2d3aa0f2-d6d5-4a1c-87a1-c53a488c6818.png)
 
 
 <h1>Take an input of any generic type and return the output using C# generics and with the help of object oriented programming</h1>
