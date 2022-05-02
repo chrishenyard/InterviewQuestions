@@ -6,8 +6,8 @@ Visual Studio 2022<br/>
 <h1>Display data using the Breadth First search.</h1>
 Numbers represent levels.<br/>
 <br/>
-O performance notation:<br/>
-[image](https://user-images.githubusercontent.com/10076659/166330983-2d3aa0f2-d6d5-4a1c-87a1-c53a488c6818.png)
+O notation performance:<br/>
+![image](https://user-images.githubusercontent.com/10076659/166331368-1ae555bd-02e9-4acd-b093-22ed1626ad98.png)
 
 
 <h1>Take an input of any generic type and return the output using C# generics and with the help of object oriented programming</h1>
