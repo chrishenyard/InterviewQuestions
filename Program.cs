@@ -26,6 +26,49 @@ static void BreadthFirstSearchDisplay()
                                    /        \   
                                   I(6)     J(6)
     */
+
+    var rootNode = BuildTree();
+    Console.WriteLine("Display data using the Breadth First search. Numbers represent levels.");
+    Console.WriteLine();
+    Node.BreadthFirstTraversal(rootNode);
+}
+
+/* 
+
+Display data using the Depth First search.
+Numbers represent levels.
+
+*/
+static void DepthFirstSearchDisplay()
+{
+    /* 
+                          A(1)
+                         /    \
+                        --------
+                        B(2)   E(2)
+                       /         \
+                      -------------
+                    C(3)           F(3)
+                   /                \
+                  --------------------
+                D(4)                 G(4)
+                -------------------------
+                                        |
+                                      H(5)
+                                    --------
+                                   /        \   
+                                  I(6)     J(6)
+    */
+
+    var rootNode = BuildTree();
+    Console.WriteLine("Display data using the Depth First search. Numbers represent levels.");
+    Console.WriteLine();
+    Node.DepthFirstTraversal(rootNode);
+}
+
+
+static Node BuildTree()
+{
     var nodeA = new Node("A");
     var nodeB = new Node("B");
     var nodeC = new Node("C");
@@ -57,11 +100,10 @@ static void BreadthFirstSearchDisplay()
     Node.AddRightNode(nodeG, nodeH);
 
     // nodeH
-    Node.AddLeftNode(nodeH, nodeI);
+    Node.AddLeftNode(nodeH, nodeI, true);
     Node.AddRightNode(nodeH, nodeJ);
 
-    Node.DisplayData(nodeA);
-    Console.WriteLine();
+    return nodeA;
 }
 
 /*
@@ -83,6 +125,8 @@ StringType("hello world")
 */
 static void GenericTypeDisplay()
 {
+    Console.WriteLine("Take a input of any generic type and return the output using C# generics and with the help of object oriented programming.");
+    Console.WriteLine();
     var numberType = new NumberType<int>(1);
     var stringType = new StringType<string>("hello world");
     numberType.DisplayData();
@@ -93,12 +137,14 @@ static void GenericTypeDisplay()
 // Given a list of cities "new york, detroit, miami", capitalize the first letter of each word: New York, Detroit, Miami
 static void TitleCaseDisplay()
 {
+    Console.WriteLine("Given a list of cities \"new york, detroit, miami\", capitalize the first letter of each word: New York, Detroit, Miami.");
+    Console.WriteLine();
     var titles = new List<string?>() { "new york", "detroit", "miami", null };
     var titleCase = new TitleCase(titles);
     titleCase.DisplayData();
-    Console.WriteLine();
 }
 
+DepthFirstSearchDisplay();
 BreadthFirstSearchDisplay();
 GenericTypeDisplay();
 TitleCaseDisplay();
