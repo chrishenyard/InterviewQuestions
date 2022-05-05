@@ -1,4 +1,6 @@
-﻿namespace Questions
+﻿using Questions.Helpers.Console;
+
+namespace Questions
 {
     public class Node
     {
@@ -33,7 +35,7 @@
             queue.Enqueue(node);
             string content = string.Empty;
 
-            SetRandomForegroundColor();
+            ConsoleHelper.SetRandomForegroundColor();
             Console.WriteLine($"{level++}" + node.Data);
 
             while (queue.Count > 0)
@@ -43,17 +45,17 @@
                 if (node.Left != null)
                 {
                     queue.Enqueue(node.Left);
-                    content += $"{level}" + node.Left.Data + Tabs(1);
+                    content += $"{level}" + node.Left.Data + ConsoleHelper.Tabs(1);
                 }
 
                 if (node.Right != null)
                 {
                     queue.Enqueue(node.Right);
-                    content += $"{level}" + node.Right.Data + Tabs(1);
+                    content += $"{level}" + node.Right.Data + ConsoleHelper.Tabs(1);
 
-                    SetRandomForegroundColor();
+                    ConsoleHelper.SetRandomForegroundColor();
                     Console.Write(content + Environment.NewLine);
-                    content = Tabs(level);
+                    content = ConsoleHelper.Tabs(level);
                     level++;
                 }
             }
@@ -103,8 +105,8 @@
             while (stack.Count > 0)
             {
                 var current = stack.Pop();
-                SetRandomForegroundColor();
-                Console.WriteLine(Tabs(level-1) + $"{level}" + current.Data);
+                ConsoleHelper.SetRandomForegroundColor();
+                Console.WriteLine(ConsoleHelper.Tabs(level-1) + $"{level}" + current.Data);
 
                 if (current.Right != null)
                 {
@@ -159,18 +161,6 @@
             }
 
             return null;
-        }
-
-        private static string Tabs(int count)
-        {
-            var tabs = Enumerable.Repeat("\t", count);
-            return string.Join("", tabs);
-        }
-
-        private static void SetRandomForegroundColor()
-        {
-            Random r = new Random();
-            Console.ForegroundColor = (ConsoleColor)r.Next(1, 16);
         }
     }
 }

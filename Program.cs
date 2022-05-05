@@ -1,4 +1,5 @@
 ﻿using Questions;
+using Questions.Helpers.Console;
 
 /* 
 
@@ -28,9 +29,9 @@ static void BreadthFirstSearchDisplay()
     */
 
     var rootNode = BuildTree();
-    Console.WriteLine("Display data using the Breadth First search. Numbers represent levels.");
-    Console.WriteLine();
+    Console.WriteLine("Display data using the Breadth First search. Numbers represent levels.\n");
     Node.BreadthFirstTraversal(rootNode);
+    Console.WriteLine();
 }
 
 /* 
@@ -61,9 +62,9 @@ static void DepthFirstSearchDisplay()
     */
 
     var rootNode = BuildTree();
-    Console.WriteLine("Display data using the Depth First search. Numbers represent levels.");
-    Console.WriteLine();
+    Console.WriteLine("Display data using the Depth First search. Numbers represent levels.\n");
     Node.DepthFirstTraversal(rootNode);
+    Console.WriteLine();
 }
 
 
@@ -127,10 +128,16 @@ static void GenericTypeDisplay()
 {
     Console.WriteLine("Take a input of any generic type and return the output using C# generics and with the help of object oriented programming.");
     Console.WriteLine();
+
     var numberType = new NumberType<int>(1);
     var stringType = new StringType<string>("hello world");
+    
+    ConsoleHelper.SetRandomForegroundColor();
     numberType.DisplayData();
+    ConsoleHelper.SetRandomForegroundColor();
     stringType.DisplayData();
+    
+    Console.ResetColor();
     Console.WriteLine();
 }
 
@@ -139,9 +146,13 @@ static void TitleCaseDisplay()
 {
     Console.WriteLine("Given a list of cities \"new york, detroit, miami\", capitalize the first letter of each word: New York, Detroit, Miami.");
     Console.WriteLine();
+
     var titles = new List<string?>() { "new york", "detroit", "miami", null };
     var titleCase = new TitleCase(titles);
+
+    ConsoleHelper.SetRandomForegroundColor();
     titleCase.DisplayData();
+    Console.ResetColor();
 }
 
 DepthFirstSearchDisplay();
