@@ -9,6 +9,12 @@ Numbers represent levels.<br/>
 Big O notation performance:<br/>
 ![image](https://user-images.githubusercontent.com/10076659/166331368-1ae555bd-02e9-4acd-b093-22ed1626ad98.png)
 
+<h1>Display data using the Depth First search.</h1>
+Numbers represent levels.<br/>
+<br/>
+Big O notation performance:<br/>
+![image](https://user-images.githubusercontent.com/10076659/166331368-1ae555bd-02e9-4acd-b093-22ed1626ad98.png)
+
 <h1>Take an input of any generic type and return the output using C# generics and with the help of object oriented programming</h1>
 
 Base Class - BaseClass<br/>

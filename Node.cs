@@ -147,7 +147,6 @@
                     return current;
                 }
 
-
                 if (current.Right != null)
                 {
                     stack.Push(current.Right);
