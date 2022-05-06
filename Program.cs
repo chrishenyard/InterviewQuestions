@@ -1,5 +1,5 @@
-﻿using Questions;
-using Questions.Helpers.Console;
+﻿using Questions.Helpers.Console;
+using Questions.Topics;
 
 /* 
 
@@ -153,10 +153,65 @@ static void TitleCaseDisplay()
     ConsoleHelper.SetRandomForegroundColor();
     titleCase.DisplayData();
     Console.ResetColor();
+    Console.WriteLine();
+}
+
+/*
+
+Hashes
+
+For objects, the GetHash method is used to retrieve the key in a dictionary or a hash table.
+The GetHash method is also used as a lookup.
+In the case of hash collisions, the Equals method is used to determine equality.
+It is why when overriding the GetHash method it requires that you override the Equals method.
+
+*/
+static void Equality()
+{
+    var point1 = new Point3D(1, 2, 3);
+    var point2 = new Point3D(1, 2, 3);
+
+    // The equals sign compares reference values. 
+    // So even though the points have the same values, they are not equal.
+    ConsoleHelper.SetRandomForegroundColor();
+    Console.WriteLine("point 1 and point2 are not equal because each has a different reference value");
+    Console.WriteLine($"{point1 == point2}\n");
+
+    // The Equals method has been overriden in the Point3D class to accurately determine equality.
+    // They are equal because all of the values are the same.
+    ConsoleHelper.SetRandomForegroundColor();
+    Console.WriteLine("The Equals method has been overriden in the Point3D class to accurately determine equality");
+    Console.WriteLine($"{point1.Equals(point2)}\n");
+
+
+    ConsoleHelper.SetRandomForegroundColor();
+    var dictionary = new Dictionary<Point3D, Point3D> { { point1, point1 } };
+    var point3D = dictionary[point1];
+
+    // Objects must be immutable if used as a dictionary or hash key
+    ConsoleHelper.SetRandomForegroundColor();
+    Console.WriteLine("Objects must be immutable if used as a dictionary or hash key");
+    Console.WriteLine($"Key exists: {point3D is not null}\n");
+
+    // When values change, so does the key
+    ConsoleHelper.SetRandomForegroundColor();
+    Console.WriteLine("When values change, so does the key");
+    
+    if (point3D != null)
+    {
+        point3D.X = -1;
+        dictionary.TryGetValue(point3D, out var point);
+        Console.WriteLine($"Key exists: {point is not null}\n");
+    }
+
+    Console.ResetColor();
 }
 
 DepthFirstSearchDisplay();
 BreadthFirstSearchDisplay();
 GenericTypeDisplay();
 TitleCaseDisplay();
+Equality();
+
+
 

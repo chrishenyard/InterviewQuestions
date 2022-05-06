@@ -1,6 +1,6 @@
 ﻿using Questions.Helpers.Console;
 
-namespace Questions
+namespace Questions.Topics
 {
     public class Node
     {

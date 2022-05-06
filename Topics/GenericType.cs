@@ -1,4 +1,4 @@
-﻿namespace Questions
+﻿namespace Questions.Topics
 {
     public abstract class GenericType<T>
     {

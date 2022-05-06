@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace Questions
+namespace Questions.Topics
 {
     public class TitleCase
     {
