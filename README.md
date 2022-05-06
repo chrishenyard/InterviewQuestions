@@ -32,4 +32,10 @@ StringType("hello world")<br/>
 
 <h1>Given a list of cities "new york, detroit, miami", capitalize the first letter of each word: New York, Detroit, Miami</h1>
 
+<h1>Hashes</h1>
 
+For objects, the GetHash method is used to retrieve the key in a dictionary or a hash table.<br/>
+The GetHash method is also used as a lookup.<br/>
+In the case of hash collisions, the Equals method is used to determine equality.<br/>
+It is why when overriding the GetHash method it requires that you override the Equals method.<br/>
+<br/>

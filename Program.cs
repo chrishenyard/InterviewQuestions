@@ -166,7 +166,7 @@ In the case of hash collisions, the Equals method is used to determine equality.
 It is why when overriding the GetHash method it requires that you override the Equals method.
 
 */
-static void Equality()
+static void EqualityDisplay()
 {
     var point1 = new Point3D(1, 2, 3);
     var point2 = new Point3D(1, 2, 3);
@@ -211,7 +211,7 @@ DepthFirstSearchDisplay();
 BreadthFirstSearchDisplay();
 GenericTypeDisplay();
 TitleCaseDisplay();
-Equality();
+EqualityDisplay();
 
 
 
