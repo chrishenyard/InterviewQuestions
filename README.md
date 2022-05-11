@@ -39,3 +39,8 @@ The GetHash method is also used as a lookup.<br/>
 In the case of hash collisions, the Equals method is used to determine equality.<br/>
 It is why when overriding the GetHash method it requires that you override the Equals method.<br/>
 <br/>
+
+<h1>Binary Search</h1>
+Use the .Net binary search method to find comparable types such as strings and integers
+<br/>
+

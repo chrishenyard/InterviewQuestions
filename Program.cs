@@ -1,4 +1,5 @@
 ﻿using Questions.Helpers.Console;
+using Questions.Helpers.Strings;
 using Questions.Topics;
 
 /* 
@@ -207,11 +208,47 @@ static void EqualityDisplay()
     Console.ResetColor();
 }
 
+/*
+Use the .Net binary search method to find comparable types such as strings and integers
+*/
+static void BinarySearch()
+{
+    ConsoleHelper.SetRandomForegroundColor();
+    var random = new Random();
+
+    // Find a string
+    var stringList = Enumerable
+        .Range(0, 1000)
+        .Select(s => StringHelper.RandomString(20))
+        .OrderBy(s => s)
+        .ToList<IComparable>();
+
+    var searchIndex = random.Next(0, stringList.Count);
+    var stringValue = stringList[searchIndex];
+    var index = new BinarySearch<List<IComparable>>(stringList).Search(stringValue);
+    Console.WriteLine($"Searching for: {stringValue} at index: {index} found: {stringValue}\n");
+
+    // Find an integer
+    var intList = Enumerable
+        .Range(0, 1000)
+        .Cast<IComparable>()
+        .OrderBy(n => n)
+        .ToList();
+
+    searchIndex = random.Next(0, intList.Count);
+    var intValue = intList[searchIndex];
+    index = new BinarySearch<List<IComparable>>(intList).Search(intValue);
+    Console.WriteLine($"Searching for: {intValue} at index: {index} found: {intValue}\n");
+
+    Console.ResetColor();
+}
+
 DepthFirstSearchDisplay();
 BreadthFirstSearchDisplay();
 GenericTypeDisplay();
 TitleCaseDisplay();
 EqualityDisplay();
+BinarySearch();
 
 
 
