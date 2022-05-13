@@ -44,3 +44,5 @@ It is why when overriding the GetHash method it requires that you override the E
 Use the .Net binary search method to find comparable types such as strings and integers
 <br/>
 
+<h1>Linq Select Many</h1>
+Demonstration of Linq SelectMany

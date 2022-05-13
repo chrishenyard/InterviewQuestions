@@ -243,12 +243,52 @@ static void BinarySearch()
     Console.ResetColor();
 }
 
+/*
+
+Demonstration of Linq SelectMany
+
+*/
+static void SelectMany()
+{
+    ConsoleHelper.SetRandomForegroundColor();
+    Console.WriteLine("Demonstration of Linq SelectMany\r\n");
+
+    // Distinct investment categories
+    Console.WriteLine("Distinct investment categories\r\n");
+    Portfolio.GetInvestors()
+        .SelectMany(i => i.Investments.SelectMany(i => i.Categories).Distinct())
+        .OrderBy(i => i.Sector)
+        .ToList()
+        .ForEach(i => Console.WriteLine(i.Sector));
+
+    ConsoleHelper.SetRandomForegroundColor();
+    Console.WriteLine("\r\nInvestors with categories\r\n");
+
+    // Investors with categories
+    Portfolio.GetInvestors()
+        .GroupBy(i => new { i.Name, i.Investments })
+        .Select(i => new { i.Key.Name, Categories = i.Key.Investments
+            .SelectMany(i => i.Categories.Select(i => i.Sector)).ToList() })
+        .OrderBy(i => i.Name)
+        .ToList()
+        .ForEach(i => Console.WriteLine($"Investor: {i.Name} Categories: " + string.Join(" ", i.Categories)));
+    
+    Console.ResetColor();
+}
+
 DepthFirstSearchDisplay();
 BreadthFirstSearchDisplay();
 GenericTypeDisplay();
 TitleCaseDisplay();
 EqualityDisplay();
 BinarySearch();
+SelectMany();
+
+
+
+
+
+
 
 
 
